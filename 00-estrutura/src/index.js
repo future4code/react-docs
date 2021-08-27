@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // Escolha qual exemplo visualizar deixando apenas o exemplo desejado não-comentado abaixo.
-import App from './exemplo-pages';
-// import App from './exemplo-barra-de-navegacao';
+// import App from './exemplo-pages';
+import App from './exemplo-barra-de-navegacao';
 // import App from './exemplo-state-vazio';
 
 ReactDOM.render(
