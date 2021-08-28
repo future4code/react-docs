@@ -29,7 +29,7 @@ export const Input = styled.input`
 export const MessagesContainer = styled.div`
     margin: 20px auto;
     height: 50vh;
-    width: 50vw;
+    width: 40vw;
     text-align: center;
     border: 1px solid black;
     > ${MessageContainer}:nth-child(even) {
@@ -37,3 +37,13 @@ export const MessagesContainer = styled.div`
     }
 `;
 
+export const JsonViewerContainer = styled.div`
+    position: absolute;
+    max-height: 300px;
+    width: 20vw;
+    top: 150px;
+    left: 0;
+    border: 1px solid black;
+    overflow-y: scroll;
+    text-align: left;
+`;

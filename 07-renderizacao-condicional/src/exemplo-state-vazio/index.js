@@ -1,7 +1,15 @@
 import React from 'react';
-import { AppContainer, AvisoContainer, MessageContainer, MessagesContainer, Input } from './app.styles.js';
+import { 
+    AppContainer, 
+    AvisoContainer, 
+    MessageContainer, 
+    MessagesContainer, 
+    Input,
+    JsonViewerContainer
+} from './app.styles.js';
+import ReactJson from 'react-json-view';
 
-export default class App extends React.Component {
+export default class MessagesPage extends React.Component {
     state = {
         messages: [],
         message: ""
@@ -26,11 +34,24 @@ export default class App extends React.Component {
         this.setState({ messages: newMessages});
     }
 
+    onEditStateJson = ({updated_src}) => {
+        this.setState({...updated_src});
+    }
+
     render() {
         return (
             <AppContainer>
-                <h4>Use o input para adicionar mensagens.</h4>
-                <h4>Clique nas mensagens para excluí-las</h4>
+                <JsonViewerContainer >
+                <ReactJson 
+                    src={this.state} 
+                    theme="apathy:inverted" 
+                    displayDataTypes={false} 
+                    displayObjectSize={false}
+                    onEdit={this.onEditStateJson}
+                />
+                </JsonViewerContainer>
+                <h3>Use o input para adicionar mensagens.</h3>
+                <h3>Clique nas mensagens para excluí-las</h3>
                 <MessagesContainer>
                     {this.state.messages.length ? 
                         this.state.messages.map(message => (
