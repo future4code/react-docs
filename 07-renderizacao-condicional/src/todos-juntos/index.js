@@ -46,6 +46,8 @@ export default class App extends React.Component {
                     return <Home/>
                 case nomesPaginas.MESSAGES:
                     return <MessagesPage/>
+                default: 
+                    return <Home/>
             }
         }
         return (
