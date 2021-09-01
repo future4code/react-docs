@@ -55,7 +55,7 @@ export default class MessagesPage extends React.Component {
                 <MessagesContainer>
                     {this.state.messages.length ? 
                         this.state.messages.map(message => (
-                            <MessageContainer onClick={() => this.deleteMessage(message.id)}>{message.text}</MessageContainer>
+                            <MessageContainer key={message.id} onClick={() => this.deleteMessage(message.id)}>{message.text}</MessageContainer>
                         )) : 
                     <AvisoContainer><p>Não há mensagens</p></AvisoContainer>}
                 </MessagesContainer>
