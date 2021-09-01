@@ -15,9 +15,6 @@ export const Navbar = ({ isUserLoggedIn, logIn, logOut, onClickPaginaHome, onCli
                 </Button>
             :
                 <span>
-                    <Button>
-                        Registrar
-                    </Button>
                     <Button onClick={logIn}>
                         Entrar
                     </Button>
