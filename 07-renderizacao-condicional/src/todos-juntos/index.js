@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navbar, JsonViewer } from './components';
 import { Home, MessagesPage } from './pages';
-import { AppContainer } from './app.styles';
+import { AppContainer, StateDescription, JsonViewerContainer } from './app.styles';
 
 const nomesPaginas = {
     HOME: "home",
@@ -52,20 +52,24 @@ export default class App extends React.Component {
         }
         return (
             <>
-            <Navbar 
-                isUserLoggedIn={this.state.loggedIn} 
-                logIn={this.logIn} 
-                logOut={this.logOut}
-                onClickPaginaHome={this.onClickPaginaHome}
-                onClickPaginaMessages={this.onClickPaginaMessages}
-            />
-            <AppContainer>
-                <JsonViewer 
-                    src={this.state} 
-                    onEdit={this.onEditStateJson}
+                <Navbar 
+                    isUserLoggedIn={this.state.loggedIn} 
+                    logIn={this.logIn} 
+                    logOut={this.logOut}
+                    onClickPaginaHome={this.onClickPaginaHome}
+                    onClickPaginaMessages={this.onClickPaginaMessages}
                 />
-                {obterPagina()}
-            </AppContainer>
+                <AppContainer>
+                    <StateDescription>Abaixo, veja os estados dos componentes</StateDescription>
+                    <JsonViewerContainer>
+                        <JsonViewer 
+                            component={"App"}
+                            src={this.state} 
+                            onEdit={this.onEditStateJson}
+                        />
+                    </JsonViewerContainer>
+                    {obterPagina()}
+                </AppContainer>
             </>
         )
     }

@@ -7,7 +7,7 @@ import {
     Input,
     JsonViewerContainer
 } from './app.styles.js';
-import ReactJson from 'react-json-view';
+import { JsonViewer } from '../components/json-viewer';
 
 export default class MessagesPage extends React.Component {
     state = {
@@ -42,13 +42,11 @@ export default class MessagesPage extends React.Component {
         return (
             <AppContainer>
                 <JsonViewerContainer >
-                <ReactJson 
-                    src={this.state} 
-                    theme="apathy:inverted" 
-                    displayDataTypes={false} 
-                    displayObjectSize={false}
-                    onEdit={this.onEditStateJson}
-                />
+                    <JsonViewer 
+                        src={this.state} 
+                        onEdit={this.onEditStateJson}
+                        component={"MessagesPage"}
+                    />
                 </JsonViewerContainer>
                 <h3>Use o input para adicionar mensagens.</h3>
                 <h3>Clique nas mensagens para excluí-las</h3>
