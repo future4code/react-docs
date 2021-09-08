@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navbar } from './navbar';
 import { JsonViewer } from '../components/json-viewer';
+import { JsonViewerContainer } from './navbar.styles';
 
 export default class App extends React.Component {
     state = {
@@ -24,10 +25,14 @@ export default class App extends React.Component {
             <>
                 <Navbar isUserLoggedIn={this.state.loggedIn} logIn={this.logIn} logOut={this.logOut}/>
                 <div style={{position: 'relative'}}>
-                <JsonViewer 
-                    src={this.state} 
-                    onEdit={this.onEditStateJson}
-                />
+                <JsonViewerContainer>
+                    <JsonViewer 
+                        src={this.state} 
+                        onEdit={this.onEditStateJson}
+                        component={"Navbar"}
+                    />
+                </JsonViewerContainer>
+
                 </div>
             </>
         )

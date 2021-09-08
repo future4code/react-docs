@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppContainer, MenuContainer } from './app.styles';
+import { AppContainer, MenuContainer, JsonViewerContainer } from './app.styles';
 import { JsonViewer } from '../components/json-viewer';
 // importamos as páginas da aplicação para renderizá-las condicionalmente aqui.
 import Home from './pages/home';
@@ -76,10 +76,14 @@ export default class App extends React.Component {
             <>
         {/**Para renderizar a página, basta chamar a função que retorna a página com base no valor do estado. */}
                 <AppContainer>
-                <JsonViewer 
-                    src={this.state} 
-                    onEdit={this.onEditStateJson}
-                />
+                <JsonViewerContainer>
+                    <JsonViewer 
+                        src={this.state} 
+                        onEdit={this.onEditStateJson}
+                        component={"App"}
+                    />
+                </JsonViewerContainer>
+                
                     {obterPagina()}
                 </AppContainer>
                 <MenuContainer>

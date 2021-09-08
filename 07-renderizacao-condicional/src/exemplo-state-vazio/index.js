@@ -23,7 +23,7 @@ export default class MessagesPage extends React.Component {
         e.preventDefault();
         const messages = [...this.state.messages, {
             text: this.state.message,
-            id: 1000 * Math.random() * Math.random()
+            id: this.state.messages.length
         }];
         this.setState({ messages });
         this.setState({ message: "" });

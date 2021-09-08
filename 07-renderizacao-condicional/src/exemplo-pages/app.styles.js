@@ -12,3 +12,12 @@ export const AppContainer = styled.div`
 export const MenuContainer = styled.div`
     text-align: center;
 `;
+
+export const JsonViewerContainer = styled.div`
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border: 1px solid black;
+    text-align: left;
+    width: 20vw;
+`;
