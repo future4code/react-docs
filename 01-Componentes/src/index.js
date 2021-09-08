@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './App-state';
+// Altere a linha comentada abaixo para mudar o modo do projeto
+import App from './App';
+// import App from './App-state'; 
 
 ReactDOM.render(
   <React.StrictMode>
