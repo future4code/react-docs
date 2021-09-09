@@ -12,6 +12,7 @@ export default class App extends React.Component {
     }
 
     render() {
+        console.log(this.state.text)
         return (
             <div>
                 <h1>Salve, família!</h1>
