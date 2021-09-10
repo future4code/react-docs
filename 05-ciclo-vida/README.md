@@ -10,10 +10,10 @@ Nesta pasta é possível encontrar uma implementação da API [The Internet Chuc
 
 Para rodar, siga os seguintes comandos após o clone:
 ```
-$ cd 04-ciclo-vida
+$ cd 05-ciclo-vida
 $ npm i
 $ npm run start
 ```
 
 ## Acesse os modos sem clonar o projeto
-- [Link](https://impolite-science.surge.sh)
+- [Link](https://rambunctious-hands.surge.sh/)

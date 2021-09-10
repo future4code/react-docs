@@ -17,7 +17,7 @@ Logo, para alterar qual dos modos deseja rodar o projeto é possível alterar o 
 
 Para rodar, siga os seguintes comandos após o clone:
 ```
-$ cd 01-componentes
+$ cd 02-componentes
 $ npm i
 $ npm run start
 ```

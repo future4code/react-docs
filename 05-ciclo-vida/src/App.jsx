@@ -30,11 +30,14 @@ export default class App extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        console.log(prevState)
-        const verifyFisrtName = this.state.firstName && this.state.firstName != prevState.firstName
-        const verifyLastName = this.state.lastName && this.state.lastName != prevState.lastName
+        console.log("Prev state", prevState)
+        console.log("Current state", this.state)
+        const verifyFisrtName = this.state.firstName && this.state.firstName !== prevState.firstName
+        const verifyLastName = this.state.lastName && this.state.lastName !== prevState.lastName
+
+        console.log("Deve fazer uma nova requisição?", verifyFisrtName || verifyLastName)
         if (verifyFisrtName || verifyLastName)
-            axios.get(`http://api.icndb.com/jokes/random?firstName=${this.state.firstName}&lastName=${this.state.lastName}`).then((response) => {
+            axios.get(`https://api.icndb.com/jokes/random?firstName=${this.state.firstName}&lastName=${this.state.lastName}`).then((response) => {
                 this.setState({ text: response.data.value.joke })
             })
     }
