@@ -1,5 +1,5 @@
 {
-  "name": "create-react-app",
+  "name": "01-intro-jsx",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,9 +8,8 @@
     "@testing-library/user-event": "^12.8.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-json-view": "^1.21.3",
     "react-scripts": "4.0.3",
-    "styled-components": "^5.3.1"
+    "web-vitals": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
