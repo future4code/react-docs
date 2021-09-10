@@ -10,15 +10,13 @@ export const Post = ({ post, onClickPost, key }) => {
     // Ela tem a sintaxe de uma props, mas só serve para a organização do React.
     return (
         <PostContainer onClick={() => onClickPost(post.id)} key={post.id}>
-            <div>{post.id}</div>
-            <div>
-                <PostTitle>
-                    {post.title}
-                </PostTitle>
-                <PostBody>
-                    {post.body}
-                </PostBody>
-            </div>
+            <PostTitle>
+                <span>[{post.id}]</span>
+                <p>{post.title}</p>
+            </PostTitle>
+            <PostBody>
+                {post.body}
+            </PostBody>
         </PostContainer>
     )
 }

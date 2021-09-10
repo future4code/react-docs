@@ -43,15 +43,13 @@ export default class App extends React.Component {
             <PostsContainer>
                 {this.state.posts.map((post) => (
                     <PostContainer onClick={() => this.deletePost(post.id)} key={post.id}>
-                        <div>{post.id}</div>
-                        <div>
-                            <PostTitle>
-                                {post.title}
-                            </PostTitle>
-                            <PostBody>
-                                {post.body}
-                            </PostBody>
-                        </div>
+                        <PostTitle>
+                            <span>[{post.id}]</span>
+                            <p>{post.title}</p>
+                        </PostTitle>
+                        <PostBody>
+                            {post.body}
+                        </PostBody>
                     </PostContainer>
                 ))}
             </PostsContainer>
@@ -70,10 +68,13 @@ export default class App extends React.Component {
         // const getPosts = () => <Posts onClickPost={this.deletePost} posts={this.state.posts} />
         
         return (
-            <PostsPage>
-                {getPosts()}
-                <PostsInput addPost={this.addPost}/>
-            </PostsPage>
+            <>
+                <h3>Veja os posts e insira novos.</h3>
+                <PostsPage>
+                    {getPosts()}
+                    <PostsInput addPost={this.addPost}/>
+                </PostsPage>
+            </>
         )
     }
 }

@@ -5,7 +5,7 @@ export const PostsPage = styled.div`
     flex-direction: row;
     justify-content: center;
     alignt-items: center;
-    height: 90vh;
+    min-height: 70vh;
 `;
 
 export const PostsContainer = styled.div`
