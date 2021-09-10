@@ -8,6 +8,7 @@ const MainContainer = styled.main`
     display: flex;
     alignt-items: center;
     justify-content: center;
+    min-height: 90vh;
 `;
 
 const ArticleBody = styled.p`

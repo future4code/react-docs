@@ -2,6 +2,7 @@ import React from 'react';
 import {
     Header,
     Main,
+    Footer
 } from './components';
 
 export default class App extends React.Component {
@@ -21,6 +22,7 @@ export default class App extends React.Component {
             <>
                 <Header theme={this.state.theme} toggleTheme={this.toggleTheme}/>
                 <Main theme={this.state.theme}/>
+                <Footer theme={this.state.theme}/>
             </>
         )
     }
