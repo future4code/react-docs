@@ -9,7 +9,7 @@ Nesta pasta é possível encontrar um projeto que ilustra e implementa os concei
 
 Para rodar, siga os seguintes comandos após o clone:
 ```
-$ cd 03-estados
+$ cd 04-estados
 $ npm i
 $ npm run start
 ```
