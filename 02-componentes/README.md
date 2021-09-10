@@ -2,7 +2,7 @@
 
 Este projeto propõe-se a implementar e ilustrar os conceitos abordados no [capítulo 4 dos Principais Conceitos da documentaçõa oficial do React](https://pt-br.reactjs.org/docs/components-and-props.html).
 
-Maiores detalhes e observações podem ser vistas neste [vídeo explicativo](adicionar-link).
+Maiores detalhes e observações podem ser vistas neste [vídeo explicativo](https://www.loom.com/share/f2a991fc9d4d49f8aeb068bee05b46b9).
 
 ## Como rodar o projeto
 Nesta pasta é possível encontrar dois arquivos principais:
