@@ -6,6 +6,7 @@ Este projeto é composto por uma página que implementa 'light mode' e 'dark mod
 A ideia é observar como o state 'theme' tinha que pertencer ao componente pai de todos, o App, e não ao componente Header, onde o valor desse state é decidido.
 Isso foi necessário porque esse state é compartilhado por todos os componentes da aplicação, e, como no React a informação só vai de cima para baixo, e nunca para os lados, não seria possível compartilhar a informação do Header para os seus componentes irmãos, o Main e o Footer.
 
+Veja aqui um pequeno vídeo explicativo: https://www.loom.com/share/8b4bfb90b46e4b35b5c56dadeccf9063
 
 ## Veja funcionando
 Veja a implementação de todos os componentes juntos aqui:
