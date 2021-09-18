@@ -1,17 +1,18 @@
 import React from 'react';
 import { Navbar, JsonViewer } from './components';
-import { Home, MessagesPage } from './pages';
+import { Home, MessagesPage, ObjectPage } from './pages';
 import { AppContainer, StateDescription, JsonViewerContainer } from './app.styles';
 
 const nomesPaginas = {
     HOME: "home",
-    MESSAGES: "messages"
+    MESSAGES: "messages",
+    OBJECT: "object"
 }
 
 export default class App extends React.Component {
     state = {
         loggedIn: false,
-        pagina: nomesPaginas.HOME
+        page: nomesPaginas.HOME
     }
 
     logIn = () => {
@@ -22,14 +23,19 @@ export default class App extends React.Component {
         this.setState({loggedIn: false});
     }
 
-    onClickPaginaHome = () => {
+    onClickHomePage = () => {
         this.setState({
-            pagina: nomesPaginas.HOME
+            page: nomesPaginas.HOME
         });
     }
-    onClickPaginaMessages = () => {
+    onClickMessagesPage = () => {
         this.setState({
-            pagina: nomesPaginas.MESSAGES
+            page: nomesPaginas.MESSAGES
+        });
+    }
+    onClickObjectPage = () => {
+        this.setState({
+            page: nomesPaginas.OBJECT
         });
     }
 
@@ -39,13 +45,15 @@ export default class App extends React.Component {
 
     render() {
 
-        const obterPagina = () => {
+        const getPage = () => {
         
-            switch(this.state.pagina) {
+            switch(this.state.page) {
                 case nomesPaginas.HOME:
                     return <Home/>
                 case nomesPaginas.MESSAGES:
                     return <MessagesPage/>
+                case nomesPaginas.OBJECT:
+                    return <ObjectPage/>
                 default: 
                     return <Home/>
             }
@@ -56,8 +64,9 @@ export default class App extends React.Component {
                     isUserLoggedIn={this.state.loggedIn} 
                     logIn={this.logIn} 
                     logOut={this.logOut}
-                    onClickPaginaHome={this.onClickPaginaHome}
-                    onClickPaginaMessages={this.onClickPaginaMessages}
+                    onClickHomePage={this.onClickHomePage}
+                    onClickMessagesPage={this.onClickMessagesPage}
+                    onClickObjectPage={this.onClickObjectPage}
                 />
                 <AppContainer>
                     <StateDescription>Abaixo, veja os estados dos componentes</StateDescription>
@@ -68,7 +77,7 @@ export default class App extends React.Component {
                             onEdit={this.onEditStateJson}
                         />
                     </JsonViewerContainer>
-                    {obterPagina()}
+                    {getPage()}
                 </AppContainer>
             </>
         )

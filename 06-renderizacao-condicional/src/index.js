@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 // import App from './exemplo-pages';
 // import App from './exemplo-barra-de-navegacao';
 // import App from './exemplo-state-vazio';
+// import App from './exemplo-propriedades-objeto';
 import App from './todos-juntos';
 
 ReactDOM.render(
