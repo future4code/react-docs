@@ -20,7 +20,6 @@ export const HeroPowersContainer = styled.p`
 `;
 
 export const ObjectContainer = styled.div`
-    // margin: 0 100px 10px;
     margin-left: 400px;
     height: 50vh;
     width: 40vw;

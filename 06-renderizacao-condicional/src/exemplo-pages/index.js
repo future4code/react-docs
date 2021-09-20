@@ -11,7 +11,7 @@ import Cadastro from './pages/cadastro';
  * páginas. Trata-se de uma boa prática.
  * Além disso, nomes de constantes costumam estar em maiúsculas. 
  */
-const nomesPaginas = {
+const pageNames = {
     HOME: "home",
     CADASTRO: "cadastro",
     LOGIN: "login"
@@ -25,7 +25,7 @@ export default class App extends React.Component {
 
     // Aqui, definimos a página inicial.
     state = {
-        pagina: nomesPaginas.HOME
+        page: pageNames.HOME
     };
 
     /**
@@ -35,19 +35,19 @@ export default class App extends React.Component {
      * no corpo da classe, um método, pois torna o código mais legível no caso de 
      * funções maiores e mais complexas. 
      */
-    onClickPaginaHome = () => {
+    onClickHomePage = () => {
         this.setState({
-            pagina: nomesPaginas.HOME
+            page: pageNames.HOME
         });
     }
-    onClickPaginaLogin = () => {
+    onClickLoginPage = () => {
         this.setState({
-            pagina: nomesPaginas.LOGIN
+            page: pageNames.LOGIN
         });
     }
-    onClickPaginaCadastro = () => {
+    onClickCadastroPage = () => {
         this.setState({
-            pagina: nomesPaginas.CADASTRO
+            page: pageNames.CADASTRO
         });
     }
 
@@ -56,17 +56,16 @@ export default class App extends React.Component {
     }
 
     render() {
-
-        const obterPagina = () => {
+        const getPage = () => {
 /**
  * O switch decide qual página deve ser retornada com base no valor do estado.
  */
             switch(this.state.pagina) {
-                case nomesPaginas.HOME:
+                case pageNames.HOME:
                     return <Home/>
-                case nomesPaginas.LOGIN:
+                case pageNames.LOGIN:
                     return <Login/>
-                case nomesPaginas.CADASTRO:
+                case pageNames.CADASTRO:
                     return <Cadastro/>
                 default: 
                     return <Home />
@@ -83,17 +82,16 @@ export default class App extends React.Component {
                         component={"App"}
                     />
                 </JsonViewerContainer>
-                
-                    {obterPagina()}
+                    {getPage()}
                 </AppContainer>
                 <MenuContainer>
-                    <button onClick={this.onClickPaginaHome}>
+                    <button onClick={this.onClickHomePage}>
                         Home
                     </button>
-                    <button onClick={this.onClickPaginaLogin}>
+                    <button onClick={this.onClickLoginPage}>
                         Login
                     </button>
-                    <button onClick={this.onClickPaginaCadastro}>
+                    <button onClick={this.onClickCadastroPage}>
                         Cadastro
                     </button>
                 </MenuContainer>

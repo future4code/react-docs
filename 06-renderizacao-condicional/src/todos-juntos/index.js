@@ -3,7 +3,7 @@ import { Navbar, JsonViewer } from './components';
 import { Home, MessagesPage, ObjectPage } from './pages';
 import { AppContainer, StateDescription, JsonViewerContainer } from './app.styles';
 
-const nomesPaginas = {
+const pageNames = {
     HOME: "home",
     MESSAGES: "messages",
     OBJECT: "object"
@@ -12,7 +12,7 @@ const nomesPaginas = {
 export default class App extends React.Component {
     state = {
         loggedIn: false,
-        page: nomesPaginas.HOME
+        page: pageNames.HOME
     }
 
     logIn = () => {
@@ -25,17 +25,19 @@ export default class App extends React.Component {
 
     onClickHomePage = () => {
         this.setState({
-            page: nomesPaginas.HOME
+            page: pageNames.HOME
         });
     }
+
     onClickMessagesPage = () => {
         this.setState({
-            page: nomesPaginas.MESSAGES
+            page: pageNames.MESSAGES
         });
     }
+
     onClickObjectPage = () => {
         this.setState({
-            page: nomesPaginas.OBJECT
+            page: pageNames.OBJECT
         });
     }
 
@@ -46,18 +48,18 @@ export default class App extends React.Component {
     render() {
 
         const getPage = () => {
-        
             switch(this.state.page) {
-                case nomesPaginas.HOME:
+                case pageNames.HOME:
                     return <Home/>
-                case nomesPaginas.MESSAGES:
+                case pageNames.MESSAGES:
                     return <MessagesPage/>
-                case nomesPaginas.OBJECT:
+                case pageNames.OBJECT:
                     return <ObjectPage/>
                 default: 
                     return <Home/>
             }
         }
+        
         return (
             <>
                 <Navbar 
