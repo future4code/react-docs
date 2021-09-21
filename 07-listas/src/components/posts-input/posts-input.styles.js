@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const PostInputContainer = styled.div`
     margin: auto 20px;
     background-color: #eeffee;
