@@ -40,7 +40,7 @@ export default class App extends React.Component {
     addPost = (post) => {
         const newPosts = [...this.state.posts, {
             id: (Math.random() * 100000).toString(),
-            ...post
+            ...post // title e body que vieram do input.
         }];
         this.setState({ posts: newPosts });
     }

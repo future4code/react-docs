@@ -17,7 +17,7 @@ Para rodar este projeto:
 
 ```git clone https://github.com/future4code/react-docs.git```  
 ```cd react-docs```  
-```cd 07-renderizacao-condicional```  
+```cd 06-renderizacao-condicional```  
 ```npm i```  
-Escolha qual ```App``` importar  
+Escolha qual ```App``` importar em src/index.js
 ```npm start```  
