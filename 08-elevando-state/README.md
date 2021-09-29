@@ -9,14 +9,10 @@ Isso foi necessário porque esse state é compartilhado por todos os componentes
 Veja aqui um pequeno vídeo explicativo: https://www.loom.com/share/8b4bfb90b46e4b35b5c56dadeccf9063
 
 ## Veja funcionando
-Veja a implementação de todos os componentes juntos aqui:
-https://react-docs-07.surge.sh/
-
 Para rodar este projeto:
 
 ```git clone https://github.com/future4code/react-docs.git```  
 ```cd react-docs```  
-```cd 07-renderizacao-condicional```  
+```cd 08-elevando-state```  
 ```npm i```  
-Escolha qual ```App``` importar  
 ```npm start```  
