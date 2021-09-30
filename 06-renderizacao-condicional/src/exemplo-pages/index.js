@@ -60,7 +60,7 @@ export default class App extends React.Component {
 /**
  * O switch decide qual página deve ser retornada com base no valor do estado.
  */
-            switch(this.state.pagina) {
+            switch(this.state.page) {
                 case pageNames.HOME:
                     return <Home/>
                 case pageNames.LOGIN:
