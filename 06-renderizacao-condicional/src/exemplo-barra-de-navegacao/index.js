@@ -32,7 +32,6 @@ export default class App extends React.Component {
                         component={"Navbar"}
                     />
                 </JsonViewerContainer>
-
                 </div>
             </>
         )

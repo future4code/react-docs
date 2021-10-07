@@ -1,13 +1,16 @@
 import { NavbarContainer, Button } from './navbar.styles';
 
-export const Navbar = ({ isUserLoggedIn, logIn, logOut, onClickPaginaHome, onClickPaginaMessages }) => {
+export const Navbar = ({ isUserLoggedIn, logIn, logOut, onClickHomePage, onClickMessagesPage, onClickObjectPage }) => {
     return (
         <NavbarContainer>
-            <Button onClick={onClickPaginaHome}>
+            <Button onClick={onClickHomePage}>
                 Home
             </Button>
-            <Button onClick={onClickPaginaMessages}>
+            <Button onClick={onClickMessagesPage}>
                 Messages
+            </Button>
+            <Button onClick={onClickObjectPage}>
+                Objeto
             </Button>
             {isUserLoggedIn ? 
                 <Button onClick={logOut}>

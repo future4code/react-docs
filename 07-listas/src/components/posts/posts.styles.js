@@ -10,17 +10,25 @@ export const PostsContainer = styled.div`
 export const PostContainer = styled.div`
     border: 1px solid black;
     margin: 10px auto;
-    div:nth-child(1) {
-        font-weight: bold;
+`;
+
+export const PostTitleContainer = styled.div`
+    background-color: #eeffee;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    span {
+        font-weight: 600;
+        display: inline-block;
+        padding: 0 10px;
+    }
+    p {
+        display: inline-block;
+        margin: 0 10px;
         padding: 5px;
-        background-color: #f0fff0;
-        margin-right: 20px;
-        margin-top: 0;
-        border: 1px solid black;
-        width: 15px;
     }
 `;
 
-export const PostTitle = styled.h3``;
+export const PostButton = styled.button``;
 
 export const PostBody = styled.p``;

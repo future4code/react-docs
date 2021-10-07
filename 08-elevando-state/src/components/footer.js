@@ -4,12 +4,13 @@ import { dark, light } from '../constants';
 import logo from '../img/labenu.png';
 
 const FooterStyled = styled.footer`
-    height: 10vh;
-    background-color: ${props => props.theme === 'light' ? light.primary : dark.primary};
+    height: 20vh;
+    border-top: 10px #FE7E02 solid;
+    background-color: ${(props) => props.theme === 'light' ? light.primary : dark.primary};
     display: flex;
     justify-content: space-between;
     img {
-        height: 50px;
+        height: 100px;
         padding: 10px;
     }
     p {

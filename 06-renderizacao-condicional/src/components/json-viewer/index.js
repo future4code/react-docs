@@ -1,6 +1,6 @@
 import ReactJson from 'react-json-view';
 
-export const JsonViewer = ({ src, onEdit, component }) => {
+export const JsonViewer = ({ src, onEdit, component, ...props }) => {
     return (
         <ReactJson 
             src={src} 
@@ -10,6 +10,7 @@ export const JsonViewer = ({ src, onEdit, component }) => {
             displayObjectSize={false}
             onEdit={onEdit}
             quotesOnKeys={false}
+            {...props}
         />
     )
 }

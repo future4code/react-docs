@@ -24,17 +24,44 @@ export default class App extends React.Component {
         posts: defaultPosts
     }
 
+    // Esta implementação é simples, porém gera um bug: veja o que acontece se:
+    //  1. Apagar o primeiro item
+    //  2. Adicionar um novo item
+    //  3. Apagar o novo item
+    // addPost = (post) => {
+    //     const posts = [...this.state.posts, {
+    //         id: this.state.posts.length,
+    //         ...post
+    //     }];
+    //     this.setState({ posts });
+    // }
+
+    // Essa implementação é mais segura! A possibilidade de termos ids iguais é bem baixa desta maneira.
     addPost = (post) => {
-        const posts = [...this.state.posts, {
-            id: this.state.posts.length,
-            ...post
+        const newPosts = [...this.state.posts, {
+            id: (Math.random() * 100000).toString(),
+            ...post // title e body que vieram do input.
         }];
-        this.setState({ posts });
+        this.setState({ posts: newPosts });
     }
 
     deletePost = (id) => {
-        const posts = this.state.posts.filter(post => post.id !== id);
-        this.setState({ posts });
+        const newPosts = this.state.posts.filter(post => post.id !== id);
+        this.setState({ posts: newPosts });
+    }
+
+    onEditPost = (id) => {
+        const postToEditIndex = this.state.posts.findIndex(post => post.id === id);
+        const newTitle = prompt("Qual o novo título deste post?")
+        const newBody = prompt("Qual o novo corpo deste post?");
+        let editedPost = {
+            id: this.state.posts[postToEditIndex].id,
+            title: newTitle,
+            body: newBody
+        };
+        const newPosts = [...this.state.posts];
+        newPosts[postToEditIndex] = editedPost;
+        this.setState({ posts: newPosts})
     }
 
     render() {
@@ -42,16 +69,16 @@ export default class App extends React.Component {
         const getPosts = () => (
             <PostsContainer>
                 {this.state.posts.map((post) => (
-                    <PostContainer onClick={() => this.deletePost(post.id)} key={post.id}>
-                        <div>{post.id}</div>
-                        <div>
-                            <PostTitle>
-                                {post.title}
-                            </PostTitle>
-                            <PostBody>
-                                {post.body}
-                            </PostBody>
-                        </div>
+                    <PostContainer  key={post.id}>
+                        <PostTitle onDelete={() => this.deletePost(post.id)} onEdit={() => this.onEditPost(post.id)}>
+                            <div>
+                                <span>[{post.id}]</span>
+                                <p>{post.title}</p>
+                            </div>
+                        </PostTitle>
+                        <PostBody>
+                            {post.body}
+                        </PostBody>
                     </PostContainer>
                 ))}
             </PostsContainer>
@@ -70,10 +97,13 @@ export default class App extends React.Component {
         // const getPosts = () => <Posts onClickPost={this.deletePost} posts={this.state.posts} />
         
         return (
-            <PostsPage>
-                {getPosts()}
-                <PostsInput addPost={this.addPost}/>
-            </PostsPage>
+            <>
+                <h3>Você pode ver, inserir, editar e remover os posts.</h3>
+                <PostsPage>
+                    {getPosts()}
+                    <PostsInput addPost={this.addPost}/>
+                </PostsPage>
+            </>
         )
     }
 }
