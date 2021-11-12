@@ -25,8 +25,7 @@ export default class MessagesPage extends React.Component {
             text: this.state.message,
             id: this.state.messages.length
         }];
-        this.setState({ messages });
-        this.setState({ message: "" });
+        this.setState({ messages, message: "" });
     }
 
     deleteMessage = (id) => {

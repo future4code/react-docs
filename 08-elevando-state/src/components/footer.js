@@ -6,7 +6,7 @@ import logo from '../img/labenu.png';
 const FooterStyled = styled.footer`
     height: 20vh;
     border-top: 10px #FE7E02 solid;
-    background-color: ${props => props.theme === 'light' ? light.primary : dark.primary};
+    background-color: ${(props) => props.theme === 'light' ? light.primary : dark.primary};
     display: flex;
     justify-content: space-between;
     img {

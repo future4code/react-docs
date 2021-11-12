@@ -8,3 +8,4 @@ Neste repositório é possível encontrar diversos projetos voltados para auxili
 A estrutura do repositório é separada por pastas, de forma a abordar os conceitos indivudalmente dando foco a cada um. Nos readmes de cada pasta estão as instruções para rodar o projeto localmente e links para acessar as versões hospedadas na web (através do [surge](https://surge.sh/)).
 
 ![](https://campuscode-site.s3.sa-east-1.amazonaws.com/newsletter/react_black.gif)
+

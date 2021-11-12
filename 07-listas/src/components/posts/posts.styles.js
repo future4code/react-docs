@@ -10,14 +10,13 @@ export const PostsContainer = styled.div`
 export const PostContainer = styled.div`
     border: 1px solid black;
     margin: 10px auto;
-    &:hover {
-        cursor: pointer;
-    }
 `;
 
-export const PostTitle = styled.div`
+export const PostTitleContainer = styled.div`
     background-color: #eeffee;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
     span {
         font-weight: 600;
         display: inline-block;
@@ -29,5 +28,7 @@ export const PostTitle = styled.div`
         padding: 5px;
     }
 `;
+
+export const PostButton = styled.button``;
 
 export const PostBody = styled.p``;
