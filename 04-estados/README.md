@@ -1,4 +1,4 @@
-# Componentes e Props
+# Estados
 
 Este projeto propõe-se a implementar e ilustrar os conceitos abordados no [capítulo 5 dos Principais Conceitos da documentaçõa oficial do React](https://pt-br.reactjs.org/docs/state-and-lifecycle.html).
 
